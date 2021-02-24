@@ -40,7 +40,7 @@ def main():
 
     model = load_model(MODELO)
         
-    predictS=""
+    predict=""
     st.write("programa de reconocimiento de tomografías axiales computarizadas del SARS-CoV-2")
     img_file_buffer = st.file_uploader("Carge una imagen ", type=["png", "jpg", "jpeg"])
         
@@ -51,8 +51,8 @@ def main():
         
         # El botón predicción se usa para iniciar el procesamiento
     if st.button("Predicción"):
-        predictS = model_prediction(image, model)
-        st.success('EL PACIENTE ES: {}'.format(names[np.argmax(predictS)]))
+        predict = model_prediction(image, model)
+        st.success('EL PACIENTE ES: {}'.format(names[np.argmax(predict)]))
     
 if __name__ == '__main__':
     main()
